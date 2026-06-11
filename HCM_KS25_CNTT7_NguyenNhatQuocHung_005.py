@@ -71,18 +71,20 @@ def add_list():
         progress_index = check_index(working_day, completion_date)
         trang_thai = check_progress(progress_index)
 
-        job_new = {
-            "id": id,
-            "job_title": job_title,
-            "employee_name": employee_name,
-            "working_day": working_day,
-            "completion_date": completion_date,
-            "progress_index": progress_index,
-            "trang_thai": trang_thai
-        }
+        break;
 
-        jod_list.append(job_new)
-        print("Đã thêm công việc mới thành công")
+    job_new = {
+        "id": id,
+        "job_title": job_title,
+        "employee_name": employee_name,
+        "working_day": working_day,
+        "completion_date": completion_date,
+        "progress_index": progress_index,
+        "trang_thai": trang_thai
+    }
+
+    jod_list.append(job_new)
+    print("Đã thêm công việc mới thành công")
 
 
 
@@ -120,10 +122,11 @@ def input_list():
 
 
 def update_list():
+
     if check_the_list():
         return
+    tim_ma = empty_input_check("Nhập mã cần tìm: ")
     while True:
-        tim_ma = empty_input_check("Nhập mã cần tìm: ")
         if check_for_duplicates(tim_ma):
             while True:
                 employee_name_new = empty_input_check("Nhập tên nhân viên: ")
